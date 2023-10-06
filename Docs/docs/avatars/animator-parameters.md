@@ -137,9 +137,15 @@ The AFK state is triggered by:
 
 `TrackingType` indicates a few pieces of information. 
 
-If the value is 3, 4, or 6 while `VRMode` is 1, the value is indicating how many tracked points the wearer of the avatar has enabled and currently tracked. **This value can change!** If a user in 6-point tracking removes their extra three points of tracking, they will go from a value of 6 to a value of 3. Take this into account when you design your animator. 
+If the value is 3, 4, 5 or 6 while `VRMode` is 1, the value is indicating how many tracked points the wearer of the avatar has enabled and currently tracked. 
 
-If the value is 0, 1, or 2 while `VRMode` is 1, the value indicates that the avatar is still initializing. You should not design animators to branch based off this combination of values, and it should instead wait for a "valid" value of 3, 4, or 6.
+**This value can change!**
+
+If a user in 6-point tracking removes their hip, they will go from a value of 6 to a value of 5. If then they remove one foot, they will go back to 3.
+
+Take this into account when you design your animator. 
+
+If the value is 0, 1, or 2 while `VRMode` is 1, the value indicates that the avatar is still initializing. You should not design animators to branch based off this combination of values, and it should instead wait for a "valid" value of 3, 4, 5 or 6.
 
 > 🚧 Account for Changes
 > 
